@@ -38,5 +38,20 @@ func main() {
 			"message": "pong",
 		})
 	})
+
+	r.GET("/", func(c *gin.Context) {
+		c.JSON(200, gin.H{
+			"id":          1,
+			"username":    "uqingu",
+			"nickname":    "木青",
+			"email":       "uqingu@foxmail.com",
+			"avatar":      "https://cos.ap-guangzhou.myqcloud.com/myimages-1305160569/images/202204161220293.png",
+			"description": "如果结果不如你所愿，那就在尘埃落定前奋力一搏",
+			"title":       "木青笔记",
+			"miit":        "豫ICP备2021021610号-1",
+			"author":      "muqingcloud.space",
+			"createTime":  1631241008456,
+		})
+	})
 	r.Run() // 监听并在 0.0.0.0:8080 上启动服务
 }
