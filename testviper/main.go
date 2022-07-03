@@ -11,5 +11,5 @@ func main() {
 		return
 	}
 
-	fmt.Println(settings.Conf.MySQLConfig)
+	fmt.Println(settings.Conf.RedisConfig)
 }
