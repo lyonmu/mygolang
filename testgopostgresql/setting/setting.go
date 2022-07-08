@@ -12,6 +12,8 @@ import (
 	"testgopostgresql/model"
 )
 
+var SiteInfo model.Site
+
 func Init() {
 
 	fmt.Println("setting package")
@@ -43,12 +45,8 @@ func Init() {
 	// SetConnMaxLifetime 设置了连接可复用的最大时间。
 	sqlDB.SetConnMaxLifetime(time.Hour)
 
-	model.Init()
+	db.First(&SiteInfo)
 
-	var site model.Site
-
-	db.First(&site)
-
-	fmt.Println(site)
+	// fmt.Println(SiteInfo)
 
 }

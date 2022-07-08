@@ -1,7 +1,5 @@
 package model
 
-import "fmt"
-
 type Site struct {
 	Id         int    `gorm:"primary_key" json:"id"`
 	Logo       string `json:"username"`
@@ -12,8 +10,4 @@ type Site struct {
 	BackGround string `json:"title"`
 	Ministry   string `json:"miit"`
 	Police     string `json:"author"`
-}
-
-func Init() {
-	fmt.Println("model")
 }
