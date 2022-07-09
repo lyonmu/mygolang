@@ -22,17 +22,21 @@ var Mytype = TestType{
 func Init() {
 	fmt.Println(Description)
 	fmt.Println("=========================")
-	var number int64 = 18
+	var number int = 18
 	// 简短变量声明，类型自动推导
 	n := 55
 	fmt.Println(testFun(number))
 	fmt.Println(Mytype)
 	fmt.Println("=========================")
-	fmt.Println(testFun(int64(n)))
+	fmt.Println(testFun(n))
 	fmt.Println(n)
 	fmt.Println("=========================")
 	testPointer(&n)
 	fmt.Println(n)
+
+	testvar := new(int)
+	fmt.Println(testvar) // 打印变量的内存地址
+	fmt.Println(*testvar)
 }
 
 /*
@@ -42,7 +46,7 @@ func Init() {
 	}
 
 */
-func testFun(n int64) int64 {
+func testFun(n int) int {
 	n = 72
 	return n
 }
