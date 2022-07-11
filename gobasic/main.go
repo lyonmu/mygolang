@@ -1,9 +1,11 @@
 package main
 
 import (
-	"gobasic/variables"
+	"gobasic/flowcontrol"
+	// "gobasic/variables"
 )
 
 func main() {
-	variables.Init()
+	// variables.Init()
+	flowcontrol.Init()
 }
