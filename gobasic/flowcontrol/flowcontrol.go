@@ -1,6 +1,11 @@
 package flowcontrol
 
-import "fmt"
+import (
+	"fmt"
+	"log"
+
+	"go.uber.org/zap"
+)
 
 func Init() {
 	testIf(-20)
@@ -8,6 +13,12 @@ func Init() {
 	nine()
 	testFR()
 	testSwitch()
+	logger, err := zap.NewDevelopment()
+	if err != nil {
+		log.Fatalf("can't initialize zap logger: %v", err)
+	}
+	defer logger.Sync()
+	logger.Info("hello!", zap.String("name", "xiaomin"), zap.Int("age", 20))
 }
 
 func testIf(n int) {
