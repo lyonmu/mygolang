@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option go_package = "./protos";
+
+package protos;
+
+message MyProduct {
+    int32 nnber = 1;
+}
+
+message MyConsumer {
+    int32 mmber = 1;
+}
+
+service Greeter {
+    rpc ConToPro (MyConsumer) returns (MyProduct) {}
+  }
